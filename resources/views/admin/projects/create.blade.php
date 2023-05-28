@@ -19,6 +19,14 @@
             @csrf
 
             <div class="mb-3">
+                <select class="form-select @error('type_id') is-invalid @enderror" name="type_id" id="type_id">
+                    <option value="">Select project's type</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                    @endforeach
+                </select>
+           </div>
+            <div class="mb-3">
                 <label for="project_name" class="form-label">Project name</label>
                 <input type="text" class="form-control" id="project_name" name="project_name">
             </div>

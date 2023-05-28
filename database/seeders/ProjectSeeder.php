@@ -23,7 +23,7 @@ class ProjectSeeder extends Seeder
         for ($i = 0; $i <15; $i++){
             $type = Type::inRandomOrder()->first();
             $project = new Project();
-            $new_project->type_id = $type->id;
+            $project->type_id = $type->id;
             $project->project_name = $faker->sentence(2);
             $project->slug = Str::slug($project->name, '-');
             $project->version = $faker->numberBetween(1, 10);
