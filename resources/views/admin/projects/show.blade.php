@@ -11,6 +11,7 @@
             @if (isset($project->image))
              <img src="{{ asset('storage/' . $project->image) }}" alt='{{ $project->project_name . ' image' }}'>
             @endif
+            <div>Project's type:{{ $project->type?->name ?: ' not given' }}</div>
             <div>Project's version: {{ $project->version }}</div>
             <div>Project's description: {{ $project->description }}€</div>
             <div>Project's start date: {{ $project->start_date }}</div>
